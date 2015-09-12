@@ -12,41 +12,24 @@ window.addEventListener("DOMContentLoaded", function () {
         context.drawImage(liveFace, 0, 0, 320, 240);
         canvas.style.display = "block";
         var dataURL = canvas.toDataURL();
-        var blobBin = atob(dataURL.split(',')[1]);
-        var array = [];
-        for (var i = 0; i < blobBin.length; i++) {
-            array.push(blobBin.charCodeAt(i));
-        }
-        var blob = new Blob([new Uint8Array(array)], {type: 'image/png'});
-
-        faceAPIs.microsoftAPI(blob, function (data) {
-            console.log(data);
-
-            var http = new XMLHttpRequest();
-            var apiUrl = "/analytics";
-            http.open("post", apiUrl, true);
-            http.send(JSON.stringify(data));
-        });
-
-        (function () {
-            var api = new FacePP(
-                '0ef14fa726ce34d820c5a44e57fef470',
-                '4Y9YXOMSDvqu1Ompn9NSpNwWQFHs1hYD'
-            );
-            api.request('detection/detect', {
-                url: 'https://faceemoji.blob.core.windows.net/image/photo.png'
-            }, function (err, result) {
-                if (err) {
-                    // TODO handle error
-                    return;
-                }
-                // TODO use result
-                console.log(JSON.stringify(result));
-            });
-        })();
+        var dataString = dataURL.split(',')[1];
+        var http = new XMLHttpRequest();
+        var serviceEndpoint = "/blob";
+        http.open("post", serviceEndpoint, true);
+        http.onreadystatechange = function() {
+            if (http.readyState==4 && http.status==200) {
+                faces = JSON.parse(http.response);
+                drawEmojisByFaces(faces);
+            }
+        };
+        http.send(dataString);
     });
     document.getElementById("clearButton").addEventListener("click", function () {
         canvas.style.display = "none";
+        var emojiCanvas = document.getElementById("emojiCanvas");
+        if (emojiCanvas) {
+            emojiCanvas.parentNode.removeChild(emojiCanvas);
+        }
     });
     errBack = function (error) {
         console.log("Video capture error: ", error.code);
@@ -73,4 +56,38 @@ window.addEventListener("DOMContentLoaded", function () {
 function initFaceAPIs() {
     var faceAPIs = FaceAPIs();
     return faceAPIs;
+}
+
+function drawEmojisByFaces(faces) {
+    var emojiCanvas = document.createElement('canvas');
+    emojiCanvas.id = "emojiCanvas";
+    var ctx = emojiCanvas.getContext("2d");
+    emojiCanvas.width = "320";
+    emojiCanvas.height = "240";
+    img = document.getElementById("smile");
+    console.log(img);
+    for (var i = 0; i < faces.length; i++) {
+        var face = faces[i];
+        var angle = face.attributes.headPose.roll;
+        var top = face.faceRectangle.top;
+        var left = face.faceRectangle.left;
+        var width = face.faceRectangle.width;
+        var height = face.faceRectangle.height;
+        console.log("top");
+        console.log(top);
+        console.log("left");
+        console.log(left);
+        console.log("width");
+        console.log(width);
+        console.log("height");
+        console.log(height);
+
+        console.log(angle);
+        ctx.rotate(angle * Math.PI / 180);
+        ctx.drawImage(img, left, top, width, height);
+    }
+
+
+    var emojiCanvasContainer = document.getElementById("emojiCanvasContainer");
+    emojiCanvasContainer.appendChild(emojiCanvas);
 }
