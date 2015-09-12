@@ -53,7 +53,7 @@ function FaceAPIs() {
             "analyzesFaceLandmarks": "true",
             "analyzesAge": "true",
             "analyzesGender": "true",
-            "analyzesHeadPose": "true",
+            "analyzesHeadPose": "true"
         };
       	var result = {};
         $.ajax({
@@ -64,9 +64,9 @@ function FaceAPIs() {
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","d2e604dd-d878-4f26-89e0-10ce4be250c4");
             },
             type: "POST",
-            dataType: "JSON"
+            dataType: "JSON",
             // Request body
-            data: photoBinary,
+            data: photoBinary
         })
         .done(function(data) {
             result = data;
@@ -76,14 +76,14 @@ function FaceAPIs() {
         });
 
         return result;
-	}
+	};
 
 	var CallFacePPAPI = function(photoBinary) {
 		
-	}
+	};
 
 	return {
 		microsoftAPI: CallMicrosoftAPI,
 		facePPAPI: CallFacePPAPI
-	}
+	};
 }
