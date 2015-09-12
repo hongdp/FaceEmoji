@@ -6,13 +6,13 @@
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='FaceAPI.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='init.js') }}"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='facepp-sdk.min.js') }}"></script>
 </head>
  
 <body>
- 
+    <script type="text/javascript" src="{{ url_for('static', filename='FaceAPI.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='init.js') }}"></script>
     <div class="container">
         <video id="liveFace" width="320" height="240" autoplay></video>
         <br/>
@@ -21,10 +21,11 @@
             <button id="clearButton">Clear</button>
         </div>
         <canvas id="snapCanvas" width="320" height="240" style="display: none"></canvas>
+        <div id="emojiCanvasContainer"></div>
+        <img src="../static/smileEmoji.png" id="smile"/>
         <footer class="footer">
             <p>&copy; MHacks 6</p>
         </footer>
- 
     </div>
 </body>
  
