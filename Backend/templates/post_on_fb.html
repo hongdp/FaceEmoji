@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Python Flask Bucket List App</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+ 	<script type="text/javascript" src="{{ url_for('static', filename='post_on_fb.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>FaceEmoji</h1>
+            <p class="lead"></p>
+            <p><button class="btn btn-lg btn-success" onclick="confirmPage()" role="button">Post on FB</button>
+            </p>
+        </div>
+        <footer class="footer">
+            <p>&copy; MHacks 6</p>
+        </footer>
+    </div>  
+    <div id="fb-root"></div>
+    <center>
+        <fb:share-button href="http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg"
+                     type="button_count">
+        </fb:share-button>
+        <button onclick="confirmPage()">Post</button> 
+    </center>
+</body>
+</html>

@@ -22,6 +22,9 @@ def handleBlob():
     print blob_service.make_blob_url('image', blob_name)
     return "Success"
 
+@app.route("/post")
+def post_on_fb():
+  return render_template('post_on_fb.html')
 
 if __name__ == "__main__":
 	app.debug = True
