@@ -36,9 +36,6 @@ function myFacebookLogin() {
                     if (!response && response.error) {
                         alert("Post Failed!");
                     }
-                    else{
-                        alert("Post Success!");
-                    }
                 }
             );
         },
@@ -48,10 +45,41 @@ function myFacebookLogin() {
 
 function confirmPage() {
     if (confirm("Sure to post your Emoji") == true) {
-        alert("Running");
         myFacebookLogin();
     }   
     else {
         alert("Error");//confirmPage();
     }
 }
+
+function voiceControl() {
+    window.SpeechRecognition = window.SpeechRecognition    ||
+                            window.webkitSpeechRecognition ||
+                            null;
+    if (window.SpeechRecognition === null) {
+        document.getElementById('ws-unsupported').classList.remove('hidden');
+        document.getElementById('button-play-ws').setAttribute('disabled', 'disabled');
+        document.getElementById('button-stop-ws').setAttribute('disabled', 'disabled');
+    } 
+    else {
+        var recognizer = new window.SpeechRecognition();
+        recognizer.continuous = false;
+        recognizer.onresult = function(event) {
+            for (var i = event.resultIndex; i < event.results.length; i++) {
+                if (event.results[i].isFinal) {
+                    if (event.results[i][0].transcript == 'post'
+                    ||event.results[i][1].transcript == 'post'
+                    ||event.results[i][2].transcript == 'post'
+                    ||event.results[i][3].transcript == 'post'
+                    ||event.results[i][4].transcript == 'post'
+                     ) {
+                        myFacebookLogin();
+                    } 
+                }
+            }
+        };
+        recognizer.start();
+    }
+}
+
+
