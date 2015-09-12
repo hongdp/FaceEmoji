@@ -55,8 +55,7 @@ function FaceAPIs() {
             "analyzesGender": "true",
             "analyzesHeadPose": "true"
         };
-      	var result = {};
-        $.ajax({
+        return $.ajax({
             url: "https://api.projectoxford.ai/face/v0/detections&" + $.param(params),
             beforeSend: function(xhrObj){
                 // Request headers
@@ -64,18 +63,9 @@ function FaceAPIs() {
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","d2e604dd-d878-4f26-89e0-10ce4be250c4");
             },
             type: "POST",
-            dataType: "JSON",
             // Request body
             data: photoBinary
-        })
-        .done(function(data) {
-            result = data;
-        })
-        .fail(function(err) {
-            throw "Error code: " + err.statusCode + ", Message: " + err.message;
         });
-
-        return result;
 	};
 
 	var CallFacePPAPI = function(photoBinary) {
