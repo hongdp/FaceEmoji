@@ -47,7 +47,7 @@ function FaceAPIs() {
 	// 	}
 	// ]
 	// Throw exception if error response is given.
-	var CallMicrosoftAPI = function(photoBinary) {
+	var CallMicrosoftAPI = function(photoBinary, callBack) {
         var params = {
             // Request parameters
             "analyzesFaceLandmarks": "true",
@@ -55,18 +55,16 @@ function FaceAPIs() {
             "analyzesGender": "true",
             "analyzesHeadPose": "true"
         };
-        return $.ajax({
-            url: "https://api.projectoxford.ai/face/v0/detections?" + $.param(params),
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Content-Type","application/octet-stream");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","f4f23db3a4e244779bfa3f01bd6f89ca");
-            },
-            type: "POST",
-            // Request body
-            data: photoBinary,
-            dataType: "json"
-        });
+        var http = new XMLHttpRequest();
+        var apiUrl = "https://api.projectoxford.ai/face/v0/detections?";
+        http.open("post", apiUrl + $.param(params), true);
+        http.setRequestHeader("Content-Type","application/octet-stream");
+        http.setRequestHeader("Ocp-Apim-Subscription-Key","f4f23db3a4e244779bfa3f01bd6f89ca");
+        http.onreadystatechange = function() {
+        	if (http.readyState == 4 && http.status == 200) {
+				callBack(JSON.parse(http.response));
+			}
+        };
 	};
 
 	var CallFacePPAPI = function(photoBinary) {
