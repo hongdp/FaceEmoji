@@ -47,7 +47,7 @@ function FaceAPIs() {
 	// 	}
 	// ]
 	// Throw exception if error response is given.
-	var CallMicrosoftAPI = function(photoBinary, callBack) {
+	var CallMicrosoftAPI = function(blob, callBack) {
         var params = {
             // Request parameters
             "analyzesFaceLandmarks": "true",
@@ -65,6 +65,7 @@ function FaceAPIs() {
 				callBack(JSON.parse(http.response));
 			}
         };
+        http.send(blob);
 	};
 
 	var CallFacePPAPI = function(photoBinary) {
