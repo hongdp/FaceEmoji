@@ -68,8 +68,8 @@ function FaceAPIs() {
         http.send(blob);
 	};
 
-	var CallFacePPAPI = function(photoBinary) {
-		
+	var CallFacePPAPI = function(blob, callBack) {
+		var http = new XMLHttpRequest();
 	};
 
 	return {

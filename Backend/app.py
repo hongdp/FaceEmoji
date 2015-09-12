@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 from azure.storage.blob import BlobService
 import base64
 import time, datetime
+import httplib
+import urllib
+import json
 
 app = Flask(__name__)
 
@@ -25,6 +28,41 @@ def handleBlob():
 @app.route("/post")
 def post_on_fb():
   return render_template('post_on_fb.html')
+
+
+@app.route("/analytics", methods=['POST'])
+def handleFaceAnaylitics():
+    json_data = json.loads(request.data)
+    single_data = json_data[0]
+    attributes = single_data['attributes']
+    print attributes['gender']
+    return "Success"
+
+
+@app.route("/test")
+def test():
+    headers = {
+        "Content-Type": "application/json",
+        "Ocp-Apim-Subscription-Key": "f4f23db3a4e244779bfa3f01bd6f89ca"
+    }
+    conn = httplib.HTTPSConnection("api.projectoxford.ai")
+    params = urllib.urlencode({
+        "analyzesFaceLandmarks": "true",
+        "analyzesAge": "true",
+        "analyzesGender": "true",
+        "analyzesHeadPose": "true"
+    })
+    conn.request(
+        "POST",
+        "/face/v0/detections?%s" % params,
+        json.dumps({"url": "https://faceemoji.blob.core.windows.net/image/photo.png"}),
+        headers
+    )
+    response = conn.getresponse()
+    data = response.read()
+    print data
+    conn.close()
+    return "test"
 
 if __name__ == "__main__":
 	app.debug = True

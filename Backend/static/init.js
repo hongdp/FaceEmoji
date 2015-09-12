@@ -18,9 +18,32 @@ window.addEventListener("DOMContentLoaded", function () {
             array.push(blobBin.charCodeAt(i));
         }
         var blob = new Blob([new Uint8Array(array)], {type: 'image/png'});
-        faceAPIs.microsoftAPI(blob, function(data) {
+
+        faceAPIs.microsoftAPI(blob, function (data) {
             console.log(data);
+
+            var http = new XMLHttpRequest();
+            var apiUrl = "/analytics";
+            http.open("post", apiUrl, true);
+            http.send(JSON.stringify(data));
         });
+
+        (function () {
+            var api = new FacePP(
+                '0ef14fa726ce34d820c5a44e57fef470',
+                '4Y9YXOMSDvqu1Ompn9NSpNwWQFHs1hYD'
+            );
+            api.request('detection/detect', {
+                url: 'https://faceemoji.blob.core.windows.net/image/photo.png'
+            }, function (err, result) {
+                if (err) {
+                    // TODO handle error
+                    return;
+                }
+                // TODO use result
+                console.log(JSON.stringify(result));
+            });
+        })();
     });
     document.getElementById("clearButton").addEventListener("click", function () {
         canvas.style.display = "none";
