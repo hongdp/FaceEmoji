@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, redirect, url_for
 from azure.storage.blob import BlobService
 import base64
