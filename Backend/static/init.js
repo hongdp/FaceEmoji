@@ -12,8 +12,9 @@ window.addEventListener("DOMContentLoaded", function() {
             context.drawImage(liveFace, 0, 0, 320, 240);
             canvas.style.display = "block";
             var binaryString = atob(canvas.toDataURL().replace(/^data:image\/(png|jpg);base64,/, ""));
-            var JSON = faceAPIs.microsoftAPI(binaryString);
-            console.log(JSON);
+            faceAPIs.microsoftAPI(binaryString).done(function(data) {
+            	console.log(data)
+            });
         });
         document.getElementById("clearButton").addEventListener("click", function() {
             canvas.style.display = "none";

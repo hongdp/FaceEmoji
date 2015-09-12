@@ -56,15 +56,16 @@ function FaceAPIs() {
             "analyzesHeadPose": "true"
         };
         return $.ajax({
-            url: "https://api.projectoxford.ai/face/v0/detections&" + $.param(params),
+            url: "https://api.projectoxford.ai/face/v0/detections?" + $.param(params),
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Content-Type","application/octet-stream");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","d2e604dd-d878-4f26-89e0-10ce4be250c4");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","f4f23db3a4e244779bfa3f01bd6f89ca");
             },
             type: "POST",
             // Request body
-            data: photoBinary
+            data: photoBinary,
+            dataType: "json"
         });
 	};
 
