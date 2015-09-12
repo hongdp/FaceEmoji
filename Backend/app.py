@@ -11,6 +11,10 @@ def handleBlob():
     print(request.data)
     return "Success"
 
+@app.route("/post")
+def post_on_fb():
+  return render_template('post_on_fb.html')
+
 if __name__ == "__main__":
 	app.debug = True
 	app.run()
