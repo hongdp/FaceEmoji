@@ -82,4 +82,18 @@ function voiceControl() {
     }
 }
 
+function combine(){
+    var img1 = document.getElementById('img1');
+    var img2 = document.getElementById('img2');
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+
+    canvas.width = 200;
+    canvas.height = 100;
+
+    context.globalAlpha = 1.0;
+    context.drawImage(img1, 0, 0,100,100);
+    context.globalAlpha = 1.0; //Remove if pngs have alpha
+    context.drawImage(img2,100, 0,100,100);
+}
 
