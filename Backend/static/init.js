@@ -20,6 +20,30 @@ window.addEventListener("DOMContentLoaded", function () {
         var blob = new Blob([new Uint8Array(array)], {type: 'image/png'});
         faceAPIs.microsoftAPI(blob, function(data) {
             console.log(data);
+            // $.ajax({
+            // 	type: "POST",
+            // 	url: "/REST",
+            // 	contentType: "application/json",
+            // 	data: {
+            // 		'title': "hello",
+            // 		'description': "world"
+	           //  },
+	           //  dataType: "json",
+	           //  success: function(data) {
+	           //  	console.log(data);
+	           //  }
+            // })
+        	var temp = {title: "hello", description: "world"};
+        	var http = new XMLHttpRequest();
+	        var apiUrl = "/REST";
+	        http.open("post", apiUrl, true);
+	        // http.setRequestHeader("Content-Type","application/json");
+	        http.onreadystatechange = function() {
+	        	if (http.readyState == 4 && http.status == 200) {
+					console.log(http.response);
+				}
+	        };
+	        http.send(temp);
         });
     });
     document.getElementById("clearButton").addEventListener("click", function () {

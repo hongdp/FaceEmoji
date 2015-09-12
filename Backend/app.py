@@ -11,6 +11,11 @@ def handleBlob():
     print(request.data)
     return "Success"
 
+@app.route('/REST', methods=['POST'])
+def create_task():
+    print("hello")
+    return request.data, 200
+
 if __name__ == "__main__":
 	app.debug = True
 	app.run()
