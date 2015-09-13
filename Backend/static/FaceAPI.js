@@ -62,6 +62,7 @@ function FaceAPIs() {
         http.setRequestHeader("Ocp-Apim-Subscription-Key","f4f23db3a4e244779bfa3f01bd6f89ca");
         http.onreadystatechange = function() {
         	if (http.readyState == 4 && http.status == 200) {
+        		console.log(http.response);
 				callBack(JSON.parse(http.response));
 			}
         };

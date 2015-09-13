@@ -15,22 +15,8 @@ app = Flask(__name__)
 def main():
     return render_template('index.html')
 
-@app.route("/upload")
-def upload():
-    account_name = "faceemoji"
-    account_key = "kaoJiy0T7r6sXyo4wFYKCLgpAXbILKvkloeF+kFpCEUxC+bL9BxGA3WtofVxHcLPn3lMjw/UO/0sS1GCN3/AQw=="
-    blob_service = BlobService(account_name, account_key)
-    blob_service.put_block_blob_from_path('image', 'Glass.png', 'static/Glass.png')
-    blob_service.put_block_blob_from_path('image', 'Glass.png', 'static/Happy.png')
-    blob_service.put_block_blob_from_path('image', 'Glass.png', 'static/Suprise.png')
-    blob_service.put_block_blob_from_path('image', 'Glass.png', 'static/Angry.png')
-    blob_service.put_block_blob_from_path('image', 'Glass.png', 'static/Smile.png')
-    return "success"
 
-
-
-@app.route("/blob", methods=['POST'])
-def handleBlob():
+def generateImageUrl(request):
     account_name = "faceemoji"
     account_key = "kaoJiy0T7r6sXyo4wFYKCLgpAXbILKvkloeF+kFpCEUxC+bL9BxGA3WtofVxHcLPn3lMjw/UO/0sS1GCN3/AQw=="
     blob_service = BlobService(account_name, account_key)
@@ -39,10 +25,25 @@ def handleBlob():
     blob_name = hashlib.sha224(st).hexdigest() + 'image.png'
     blob_service.put_block_blob_from_bytes('image', blob_name, content)
     img_url = blob_service.make_blob_url('image', blob_name)
-    ms_data = microsoftFaceAPI(img_url)
-    fp_data = facePlusAPI(img_url)
-    data = decideEmoji(fp_data, json.loads(ms_data))
-    return json.dumps(data)
+    print img_url
+    return img_url
+
+@app.route("/")
+def main():
+    return render_template('index.html')
+
+@app.route("/blob", methods=['POST'])
+def handleBlob():
+	img_url = generateImageUrl(request)
+	ms_data = microsoftFaceAPI(img_url)
+	fp_data = facePlusAPI(img_url)
+	data = decideEmoji(fp_data, json.loads(ms_data))
+	return json.dumps(data)
+
+
+@app.route("/combine", methods=['POST'])
+def handleCombine():
+    return generateImageUrl(request)
 
 @app.route("/post")
 def post_on_fb():
@@ -139,4 +140,6 @@ def decideEmoji(fp_data, ms_data):
 if __name__ == "__main__":
 	app.debug = True
 	app.run()
+
+	
 
