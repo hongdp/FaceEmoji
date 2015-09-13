@@ -196,7 +196,7 @@ def labelFace(normalizedLandmark):
 	closeEyeTH = 0.02
 	smileTH = -0.9
 	laughTH = -0.75
-	openMouthTH = 0.07
+	openMouthTH = 0.1
 	if normalizedLandmark["underLipTop"]["y"] - normalizedLandmark["upperLipBottom"]["y"] >= openMouthTH :
 		labels.add('mouthOpen')
 	if normalizedLandmark["eyeLeftBottom"]["y"] - normalizedLandmark["eyeLeftTop"]["y"] <= closeEyeTH :
