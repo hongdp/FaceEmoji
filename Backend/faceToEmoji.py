@@ -187,7 +187,7 @@ def findCosABC(A, B, C):
 	normV1["y"] = vector1["y"]/lenV1
 	normV2["x"] = vector2["x"]/lenV2
 	normV2["y"] = vector2["y"]/lenV2
-	print(normV1, normV2)
+	#print(normV1, normV2)
 	return normV1["x"]*normV2["x"] + normV1["y"]*normV2["y"]
 
 def labelFace(normalizedLandmark):
@@ -262,8 +262,9 @@ def testFace(faceData):
   return "Normal"
 
 def main():
-  # plot(normalize(glance))
-  print testFace(suprisedLu)
+    return
+  #plot(normalize(glance))
+  #print testFace(suprisedLu)
 
 if __name__ == "__main__":
 	main()

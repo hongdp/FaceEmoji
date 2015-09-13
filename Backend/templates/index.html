@@ -63,8 +63,10 @@
         </div>
     </div>
     <!-- hack way of doing this, load bunch -->
+    {% for e in emoji_path_list %}
+        <img id="{{e}}" src="{{e}}" class="sourceEmoji"/>
+    {% endfor %}
 
-    <img src="../static/smileEmoji.png" id="smile" class="emoji"/>
     <canvas id="combineCanvas" width="480" height="180" style="display: none"></canvas>
     <footer class="footer">
         <p>&copy; MHacks 6</p>
