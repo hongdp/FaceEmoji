@@ -26,6 +26,10 @@ window.addEventListener("DOMContentLoaded", function () {
     });
     document.getElementById("clearButton").addEventListener("click", function () {
         canvas.style.display = "none";
+        var emojiCanvas = document.getElementById("emojiCanvas");
+        console.log(emojiCanvas);
+        emojiCanvas.parentNode.removeChild(emojiCanvas);
+        document.getElementById("postButton").style.display = "none";
     });
     errBack = function (error) {
         console.log("Video capture error: ", error.code);
@@ -56,8 +60,10 @@ function initFaceAPIs() {
 
 function drawEmojisByFaces(faces) {
     console.log(faces);
-    var emojiCanvas = document.getElementById("emojiCanvas");
-    console.log(emojiCanvas);
+    var emojiCanvas = document.createElement("canvas");
+    emojiCanvas.id = "emojiCanvas";
+    emojiCanvas.width = "320";
+    emojiCanvas.height = "240";
     var ctx = emojiCanvas.getContext("2d");
     img = document.getElementById("smile");
     for (var i = 0; i < faces.length; i++) {
@@ -71,5 +77,10 @@ function drawEmojisByFaces(faces) {
         ctx.drawImage(img, left, top, width, height);
     }
     emojiCanvas.style.display = "inline";
-    document.getElementById("postButton").style.display = "block";
+    document.getElementById("emojiDashborad").insertBefore(emojiCanvas, postButton);
+    postPrepare(function() {
+        var confirmButton = document.getElementById("confirmButton");
+        var postButton = document.getElementById("postButton");
+        postButton.style.display = "block";
+    });
 }

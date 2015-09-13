@@ -10,27 +10,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/")
-def main():
-    return render_template('index.html')
-
-@app.route("/blob", methods=['POST'])
-def handleBlob():
-    account_name = "faceemoji"
-    account_key = "kaoJiy0T7r6sXyo4wFYKCLgpAXbILKvkloeF+kFpCEUxC+bL9BxGA3WtofVxHcLPn3lMjw/UO/0sS1GCN3/AQw=="
-    blob_service = BlobService(account_name, account_key)
-    content = base64.b64decode(request.data)
-    st = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d-%H-%M-%S')
-    blob_name = hashlib.sha224(st).hexdigest() + 'image.png'
-    blob_service.put_block_blob_from_bytes('image', blob_name, content)
-    img_url = blob_service.make_blob_url('image', blob_name)
-    print img_url
-    data = microsoftFaceAPI(img_url)
-    print data
-    return data
-
-@app.route("/combine", methods=['POST'])
-def handleCombine():
+def generateImageUrl(request):
     account_name = "faceemoji"
     account_key = "kaoJiy0T7r6sXyo4wFYKCLgpAXbILKvkloeF+kFpCEUxC+bL9BxGA3WtofVxHcLPn3lMjw/UO/0sS1GCN3/AQw=="
     blob_service = BlobService(account_name, account_key)
@@ -40,7 +20,21 @@ def handleCombine():
     blob_service.put_block_blob_from_bytes('image', blob_name, content)
     img_url = blob_service.make_blob_url('image', blob_name)
     return img_url
-    
+
+@app.route("/")
+def main():
+    return render_template('index.html')
+
+@app.route("/blob", methods=['POST'])
+def handleBlob():
+    img_url = generateImageUrl(request)
+    data = microsoftFaceAPI(img_url)
+    return data
+
+@app.route("/combine", methods=['POST'])
+def handleCombine():
+    return generateImageUrl(request)
+
 @app.route("/post")
 def post_on_fb():
   return render_template('post_on_fb.html')
@@ -67,11 +61,6 @@ def microsoftFaceAPI(url_str):
     data = response.read()
     conn.close()
     return data
-
-
-@app.route("/posttest")
-def post_on_fb2():
-  return render_template('post_on_fb2.html')
 
 
 if __name__ == "__main__":

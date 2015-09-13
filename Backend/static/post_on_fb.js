@@ -25,7 +25,7 @@ window.fbAsyncInit = function () {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-function myFacebookLogin() {
+function myFacebookLogin(previewImageURL) {
     FB.login(
         function () {
             FB.api(
@@ -33,7 +33,7 @@ function myFacebookLogin() {
                 "POST",
                 {
                     message: "My Emoji!!",
-                    url: combineimage
+                    url: previewImageURL
                 },
                 function (response) {
                     if (!response && response.error) {
@@ -46,9 +46,9 @@ function myFacebookLogin() {
     );
 }
 
-function confirmPage() {
+function confirmPage(previewImageURL) {
     if (confirm("Sure to post your Emoji") == true) {
-        myFacebookLogin();
+        myFacebookLogin(previewImageURL);
     }
     else {
         alert("Error");//confirmPage();
@@ -83,35 +83,5 @@ function voiceControl() {
         };
         recognizer.start();
     }
-}
-
-function combine() {
-    var img1 = document.getElementById('img1');
-    var img2 = document.getElementById('img2');
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
-    var combineimage = document.getElementById('CombImg');
-
-    canvas.width = 200;
-    canvas.height = 100;
-
-    context.globalAlpha = 1.0;
-    context.drawImage(img1, 0, 0, 100, 100);
-    context.globalAlpha = 1.0; //Remove if pngs have alpha
-    context.drawImage(img2,100, 0,100,100);
-
-    //ImageToUrl
-    canvas.style.display = "block";
-    var dataURL = canvas.toDataURL();
-    var dataString = dataURL.split(',')[1];
-    var http = new XMLHttpRequest();
-    var serviceEndpoint = "/combine";
-    http.open("post", serviceEndpoint, true);
-    http.onreadystatechange = function() {
-        if (http.readyState==4 && http.status==200) {
-            combineimage = http.response;
-            console.log(combineimage);
-        }
-    };
 }
 
