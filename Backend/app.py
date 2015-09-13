@@ -19,6 +19,7 @@ def generateImageUrl(request):
     blob_name = hashlib.sha224(st).hexdigest() + 'image.png'
     blob_service.put_block_blob_from_bytes('image', blob_name, content)
     img_url = blob_service.make_blob_url('image', blob_name)
+    print img_url
     return img_url
 
 @app.route("/")
