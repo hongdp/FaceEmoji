@@ -1,5 +1,5 @@
 from math import sin, cos, pi, sqrt
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from sets import Set
 
 raisebrow = {"faceId":"14a17b1c-3a8c-4369-800e-feb441275e21","faceRectangle":{"top":103,"left":148,"width":144,"height":138},"faceLandmarks":{"pupilLeft":{"x":190.9,"y":139.8},"pupilRight":{"x":248.5,"y":138.2},"noseTip":{"x":221.7,"y":177.2},"mouthLeft":{"x":196,"y":212.1},"mouthRight":{"x":243.6,"y":211.9},"eyebrowLeftOuter":{"x":169.7,"y":113},"eyebrowLeftInner":{"x":206,"y":111.1},"eyeLeftOuter":{"x":179.8,"y":139.2},"eyeLeftTop":{"x":189.6,"y":134.2},"eyeLeftBottom":{"x":189.6,"y":142.9},"eyeLeftInner":{"x":197.8,"y":140.6},"eyebrowRightInner":{"x":231.4,"y":110.4},"eyebrowRightOuter":{"x":265.6,"y":110.4},"eyeRightInner":{"x":241.2,"y":140.4},"eyeRightTop":{"x":249.4,"y":133.5},"eyeRightBottom":{"x":250.2,"y":142.4},"eyeRightOuter":{"x":258.7,"y":138.4},"noseRootLeft":{"x":211.3,"y":142.4},"noseRootRight":{"x":227,"y":141.7},"noseLeftAlarTop":{"x":206.2,"y":164.4},"noseRightAlarTop":{"x":233.6,"y":164.4},"noseLeftAlarOutTip":{"x":199.6,"y":182.2},"noseRightAlarOutTip":{"x":241,"y":181.4},"upperLipTop":{"x":222,"y":202.4},"upperLipBottom":{"x":221.9,"y":210.1},"underLipTop":{"x":221.7,"y":213.8},"underLipBottom":{"x":222,"y":224}},"attributes":{"headPose":{"pitch":0,"roll":-1.3,"yaw":-3.2},"gender":"male","age":36}}
@@ -160,17 +160,17 @@ def normalize(facialData):
 		normalizedLandmark[key]["y"] = sin(roll)*tempx + cos(roll)*tempy
 	return normalizedLandmark
 
-def plot(landmark):
-	x = []
-	y = []
-	for key, value in landmark.iteritems():
-		x.append(value["x"])
-		y.append(value["y"])
-	plt.plot(x, y, 'ro')
-	# print(findCosABC(landmark["mouthLeft"], landmark["underLipTop"], landmark["mouthRight"]))
-	print(labelFace(landmark))
-	plt.axis([-0.5,0.5,0.5,-0.5])
-	plt.show()
+# def plot(landmark):
+# 	x = []
+# 	y = []
+# 	for key, value in landmark.iteritems():
+# 		x.append(value["x"])
+# 		y.append(value["y"])
+# 	plt.plot(x, y, 'ro')
+# 	# print(findCosABC(landmark["mouthLeft"], landmark["underLipTop"], landmark["mouthRight"]))
+# 	print(labelFace(landmark))
+# 	plt.axis([-0.5,0.5,0.5,-0.5])
+# 	plt.show()
 
 def findCosABC(A, B, C):
 	vector1 = {}

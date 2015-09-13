@@ -8,13 +8,9 @@ import urllib
 import hashlib
 import json
 from facepp import API
+from faceToEmoji import testFace
 
 app = Flask(__name__)
-
-@app.route("/")
-def main():
-    return render_template('index.html')
-
 
 def generateImageUrl(request):
     account_name = "faceemoji"
@@ -83,12 +79,9 @@ def decideEmoji(fp_data, ms_data):
 	emoji_list = []
 	face_data = []
 	url_prefix = "https://faceemoji.blob.core.windows.net/image/"
-	print len(fp_data["face"])
 	for i in range(0, min(len(fp_data["face"]), len(ms_data))):
 		face = fp_data["face"][i]
-		print ms_data
 		ms_face = ms_data[i]
-		print ms_face
 		single_face = {
 			"angle": ms_face["attributes"]["headPose"]["roll"],
 			"width": ms_face["faceRectangle"]["width"],
@@ -97,8 +90,9 @@ def decideEmoji(fp_data, ms_data):
 			"top": ms_face["faceRectangle"]["top"]
 		}
 		face_data.append(single_face)
-		keyword = ""
-		if float(face["attribute"]["smiling"]["value"]) > 80:	
+		keyword = testFace(ms_face)
+		if keyword == "Normal":	
+			keyword = ""
 			face_attribute = face["attribute"]
 			if "glass" in face_attribute:
 				if face_attribute["glass"]["value"] != "None" and float(face_attribute["glass"]["confidence"]) > 80:
@@ -108,8 +102,6 @@ def decideEmoji(fp_data, ms_data):
 				keyword += "male"
 			else:
 				keyword += "female"
-
-			print face_attribute["age"]
 			if float(face_attribute["age"]["value"]) > 60:
 				keyword += "_old"
 			elif face_attribute["age"]["value"] < 30:
@@ -127,7 +119,8 @@ def decideEmoji(fp_data, ms_data):
 			else:
 				keyword = "smile"
 			emoji_list.append(keyword)
-
+		else:
+			emoji_list.append(keyword)
 
 	ret = {
 		"face_data": face_data,
@@ -141,5 +134,5 @@ if __name__ == "__main__":
 	app.debug = True
 	app.run()
 
-	
+
 
