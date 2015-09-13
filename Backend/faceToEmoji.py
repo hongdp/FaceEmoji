@@ -197,6 +197,7 @@ def labelFace(normalizedLandmark):
 	smileTH = -0.9
 	laughTH = -0.75
 	openMouthTH = 0.1
+  sadTH = -0.95
 	if normalizedLandmark["underLipTop"]["y"] - normalizedLandmark["upperLipBottom"]["y"] >= openMouthTH :
 		labels.add('mouthOpen')
 	if normalizedLandmark["eyeLeftBottom"]["y"] - normalizedLandmark["eyeLeftTop"]["y"] <= closeEyeTH :
@@ -204,7 +205,9 @@ def labelFace(normalizedLandmark):
 	if normalizedLandmark["eyeRightBottom"]["y"] - normalizedLandmark["eyeRightTop"]["y"] <= closeEyeTH :
 		labels.add('rightEyeClose')
 	mouthAngle = findCosABC(normalizedLandmark["mouthLeft"], normalizedLandmark["underLipTop"], normalizedLandmark["mouthRight"])
-	if mouthAngle >= laughTH:
+  if normalizedLandmark["underLipTop"]["y"] < (normalizedLandmark["mouthLeft"]["y"]+normalizedLandmark["mouthRight"]["y"])/2 and mouthAngle >= sadTH:
+    labels.add('sad')
+	elif mouthAngle >= laughTH :
 		labels.add('laugh')
 	elif mouthAngle >= smileTH:
 		labels.add('smile')
@@ -239,16 +242,20 @@ def testFace(faceData):
       "feature": [Set(["leftEyeClose", "rightEyeClose"])]
     },
     {
+      "key": "Suprise", 
+      "feature": [Set(["mouthOpen"])]
+    },
+    {
+      "key": "Sad", 
+      "feature": [Set(["sad"])]
+    },
+    {
       "key": "Happy", 
       "feature": [Set(["laugh"])]
     },
     {
       "key": "Smile", 
       "feature": [Set(["smile"])]
-    },
-    {
-      "key": "Suprise", 
-      "feature": [Set(["mouthOpen"])]
     },
     {
       "key": "CloseOneEye", 
