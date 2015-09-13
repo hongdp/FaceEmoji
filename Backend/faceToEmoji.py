@@ -11,7 +11,7 @@ closeeyes = {"faceId":"79b8ca14-1ee6-4b57-85d3-672b2bb8e64a","faceRectangle":{"t
 sad = {"faceId":"d5cc348d-7535-48c3-b2cd-10ff5e09cb38","faceRectangle":{"top":124,"left":130,"width":130,"height":117},"faceLandmarks":{"pupilLeft":{"x":165.5,"y":157.9},"pupilRight":{"x":220.9,"y":156.1},"noseTip":{"x":193.1,"y":191.8},"mouthLeft":{"x":173.5,"y":220.8},"mouthRight":{"x":217.1,"y":220.0},"eyebrowLeftOuter":{"x":146.7,"y":143.2},"eyebrowLeftInner":{"x":180.0,"y":141.2},"eyeLeftOuter":{"x":157.2,"y":159.3},"eyeLeftTop":{"x":164.4,"y":156.2},"eyeLeftBottom":{"x":164.7,"y":162.5},"eyeLeftInner":{"x":172.4,"y":159.8},"eyebrowRightInner":{"x":202.8,"y":140.2},"eyebrowRightOuter":{"x":237.4,"y":140.6},"eyeRightInner":{"x":213.0,"y":158.6},"eyeRightTop":{"x":220.0,"y":154.6},"eyeRightBottom":{"x":220.7,"y":161.1},"eyeRightOuter":{"x":228.5,"y":157.4},"noseRootLeft":{"x":185.5,"y":161.3},"noseRootRight":{"x":199.9,"y":161.0},"noseLeftAlarTop":{"x":181.8,"y":181.0},"noseRightAlarTop":{"x":205.5,"y":181.0},"noseLeftAlarOutTip":{"x":174.6,"y":194.0},"noseRightAlarOutTip":{"x":213.0,"y":193.0},"upperLipTop":{"x":196.0,"y":212.0},"upperLipBottom":{"x":196.5,"y":219.2},"underLipTop":{"x":196.7,"y":221.3},"underLipBottom":{"x":197.2,"y":229.6}},"attributes":{"headPose":{"pitch":0.0,"roll":-2.5,"yaw":-4.5},"gender":"male","age":25}}
 smile = {"faceId":"7a660c4e-0de9-4949-877f-aeeeea7f3796","faceRectangle":{"top":97,"left":141,"width":123,"height":123},"faceLandmarks":{"pupilLeft":{"x":175.3,"y":130.8},"pupilRight":{"x":227.7,"y":128.2},"noseTip":{"x":200.1,"y":164.0},"mouthLeft":{"x":177.6,"y":186.6},"mouthRight":{"x":229.1,"y":184.5},"eyebrowLeftOuter":{"x":155.0,"y":115.8},"eyebrowLeftInner":{"x":188.3,"y":114.2},"eyeLeftOuter":{"x":167.8,"y":131.9},"eyeLeftTop":{"x":173.7,"y":128.7},"eyeLeftBottom":{"x":174.2,"y":134.7},"eyeLeftInner":{"x":182.0,"y":132.5},"eyebrowRightInner":{"x":210.0,"y":113.3},"eyebrowRightOuter":{"x":244.3,"y":113.2},"eyeRightInner":{"x":221.1,"y":130.6},"eyeRightTop":{"x":228.0,"y":125.9},"eyeRightBottom":{"x":228.3,"y":132.1},"eyeRightOuter":{"x":235.5,"y":128.9},"noseRootLeft":{"x":194.9,"y":133.6},"noseRootRight":{"x":207.2,"y":133.2},"noseLeftAlarTop":{"x":189.7,"y":152.3},"noseRightAlarTop":{"x":212.9,"y":152.1},"noseLeftAlarOutTip":{"x":183.7,"y":164.9},"noseRightAlarOutTip":{"x":221.3,"y":163.4},"upperLipTop":{"x":202.4,"y":181.7},"upperLipBottom":{"x":202.6,"y":186.1},"underLipTop":{"x":202.4,"y":193.5},"underLipBottom":{"x":202.3,"y":201.0}},"attributes":{"headPose":{"pitch":0.0,"roll":-2.0,"yaw":-6.3},"gender":"male","age":24}}
 laugh = {"faceId":"80ba9ca0-5f44-4a60-ba0b-57b60dcf283f","faceRectangle":{"top":101,"left":137,"width":130,"height":130},"faceLandmarks":{"pupilLeft":{"x":172.0,"y":136.0},"pupilRight":{"x":229.4,"y":134.8},"noseTip":{"x":202.1,"y":174.2},"mouthLeft":{"x":174.1,"y":194.7},"mouthRight":{"x":228.3,"y":193.3},"eyebrowLeftOuter":{"x":151.5,"y":120.8},"eyebrowLeftInner":{"x":187.6,"y":117.6},"eyeLeftOuter":{"x":163.6,"y":135.5},"eyeLeftTop":{"x":172.1,"y":133.5},"eyeLeftBottom":{"x":171.5,"y":138.5},"eyeLeftInner":{"x":180.7,"y":137.6},"eyebrowRightInner":{"x":210.1,"y":116.6},"eyebrowRightOuter":{"x":246.6,"y":118.9},"eyeRightInner":{"x":221.7,"y":136.7},"eyeRightTop":{"x":229.3,"y":131.8},"eyeRightBottom":{"x":229.3,"y":137.9},"eyeRightOuter":{"x":237.7,"y":134.7},"noseRootLeft":{"x":193.0,"y":140.6},"noseRootRight":{"x":209.9,"y":139.7},"noseLeftAlarTop":{"x":187.2,"y":160.6},"noseRightAlarTop":{"x":215.5,"y":160.3},"noseLeftAlarOutTip":{"x":180.1,"y":171.8},"noseRightAlarOutTip":{"x":222.6,"y":170.8},"upperLipTop":{"x":202.8,"y":190.6},"upperLipBottom":{"x":202.6,"y":196.8},"underLipTop":{"x":201.1,"y":207.2},"underLipBottom":{"x":201.3,"y":217.1}},"attributes":{"headPose":{"pitch":0.0,"roll":-1.2,"yaw":-4.1},"gender":"male","age":29}}
-glare = {"faceId":"02cd24c0-9a06-458a-9058-31220910e0a6","faceRectangle":{"top":105,"left":154,"width":113,"height":113},"faceLandmarks":{"pupilLeft":{"x":188.2,"y":135.3},"pupilRight":{"x":234.5,"y":134.7},"noseTip":{"x":209.0,"y":159.4},"mouthLeft":{"x":187.8,"y":190.5},"mouthRight":{"x":227.6,"y":189.9},"eyebrowLeftOuter":{"x":164.8,"y":126.3},"eyebrowLeftInner":{"x":196.0,"y":119.9},"eyeLeftOuter":{"x":175.2,"y":135.3},"eyeLeftTop":{"x":182.7,"y":133.1},"eyeLeftBottom":{"x":182.8,"y":137.1},"eyeLeftInner":{"x":190.1,"y":135.1},"eyebrowRightInner":{"x":215.0,"y":119.8},"eyebrowRightOuter":{"x":241.7,"y":122.7},"eyeRightInner":{"x":222.5,"y":135.9},"eyeRightTop":{"x":229.7,"y":132.8},"eyeRightBottom":{"x":229.9,"y":137.4},"eyeRightOuter":{"x":237.1,"y":135.1},"noseRootLeft":{"x":199.8,"y":136.2},"noseRootRight":{"x":214.2,"y":136.7},"noseLeftAlarTop":{"x":195.2,"y":152.1},"noseRightAlarTop":{"x":218.7,"y":151.4},"noseLeftAlarOutTip":{"x":190.7,"y":163.4},"noseRightAlarOutTip":{"x":223.5,"y":162.4},"upperLipTop":{"x":209.4,"y":179.4},"upperLipBottom":{"x":209.7,"y":186.5},"underLipTop":{"x":209.1,"y":190.5},"underLipBottom":{"x":208.4,"y":199.6}},"attributes":{"headPose":{"pitch":0.0,"roll":-1.9,"yaw":5.2},"gender":"male","age":27}}
+glance = {"faceId":"02cd24c0-9a06-458a-9058-31220910e0a6","faceRectangle":{"top":105,"left":154,"width":113,"height":113},"faceLandmarks":{"pupilLeft":{"x":188.2,"y":135.3},"pupilRight":{"x":234.5,"y":134.7},"noseTip":{"x":209.0,"y":159.4},"mouthLeft":{"x":187.8,"y":190.5},"mouthRight":{"x":227.6,"y":189.9},"eyebrowLeftOuter":{"x":164.8,"y":126.3},"eyebrowLeftInner":{"x":196.0,"y":119.9},"eyeLeftOuter":{"x":175.2,"y":135.3},"eyeLeftTop":{"x":182.7,"y":133.1},"eyeLeftBottom":{"x":182.8,"y":137.1},"eyeLeftInner":{"x":190.1,"y":135.1},"eyebrowRightInner":{"x":215.0,"y":119.8},"eyebrowRightOuter":{"x":241.7,"y":122.7},"eyeRightInner":{"x":222.5,"y":135.9},"eyeRightTop":{"x":229.7,"y":132.8},"eyeRightBottom":{"x":229.9,"y":137.4},"eyeRightOuter":{"x":237.1,"y":135.1},"noseRootLeft":{"x":199.8,"y":136.2},"noseRootRight":{"x":214.2,"y":136.7},"noseLeftAlarTop":{"x":195.2,"y":152.1},"noseRightAlarTop":{"x":218.7,"y":151.4},"noseLeftAlarOutTip":{"x":190.7,"y":163.4},"noseRightAlarOutTip":{"x":223.5,"y":162.4},"upperLipTop":{"x":209.4,"y":179.4},"upperLipBottom":{"x":209.7,"y":186.5},"underLipTop":{"x":209.1,"y":190.5},"underLipBottom":{"x":208.4,"y":199.6}},"attributes":{"headPose":{"pitch":0.0,"roll":-1.9,"yaw":5.2},"gender":"male","age":27}}
 eyeCenter = {"faceId":"760a7ecd-5d5a-4678-94bd-6e01fdf7f8c7","faceRectangle":{"top":85,"left":152,"width":139,"height":139},"faceLandmarks":{"pupilLeft":{"x":192.1,"y":121.7},"pupilRight":{"x":245.3,"y":120.5},"noseTip":{"x":221.2,"y":152.4},"mouthLeft":{"x":197.1,"y":190.6},"mouthRight":{"x":247.2,"y":190.2},"eyebrowLeftOuter":{"x":168.1,"y":100.6},"eyebrowLeftInner":{"x":206.9,"y":97.4},"eyeLeftOuter":{"x":183.3,"y":122.3},"eyeLeftTop":{"x":191.2,"y":120.3},"eyeLeftBottom":{"x":191.0,"y":125.2},"eyeLeftInner":{"x":198.8,"y":122.3},"eyebrowRightInner":{"x":228.9,"y":94.8},"eyebrowRightOuter":{"x":267.3,"y":97.7},"eyeRightInner":{"x":238.5,"y":122.1},"eyeRightTop":{"x":247.6,"y":118.4},"eyeRightBottom":{"x":248.0,"y":124.2},"eyeRightOuter":{"x":256.5,"y":120.8},"noseRootLeft":{"x":212.7,"y":122.0},"noseRootRight":{"x":228.0,"y":122.2},"noseLeftAlarTop":{"x":206.0,"y":143.1},"noseRightAlarTop":{"x":234.0,"y":143.7},"noseLeftAlarOutTip":{"x":199.7,"y":158.7},"noseRightAlarOutTip":{"x":239.4,"y":158.5},"upperLipTop":{"x":221.5,"y":176.7},"upperLipBottom":{"x":222.1,"y":186.4},"underLipTop":{"x":222.4,"y":189.7},"underLipBottom":{"x":222.3,"y":201.5}},"attributes":{"headPose":{"pitch":0.0,"roll":-2.0,"yaw":-3.3},"gender":"male","age":24}}
 sample = [
   {
@@ -192,7 +192,7 @@ def findCosABC(A, B, C):
 
 def labelFace(normalizedLandmark):
 	labels = Set([])
-	glareTH = 0.03
+	glanceTH = 0.03
 	closeEyeTH = 0.02
 	smileTH = -0.9
 	laughTH = -0.75
@@ -208,18 +208,62 @@ def labelFace(normalizedLandmark):
 		labels.add('laugh')
 	elif mouthAngle >= smileTH:
 		labels.add('smile')
-	if normalizedLandmark['pupilLeft']['x'] - normalizedLandmark['eyeLeftOuter']['x'] <= glareTH :
+	if normalizedLandmark['pupilLeft']['x'] - normalizedLandmark['eyeLeftOuter']['x'] <= glanceTH :
 		labels.add('leftEyeLeft')
-	elif normalizedLandmark['eyeLeftInner']['x'] - normalizedLandmark['pupilLeft']['x'] <= glareTH :
+	elif normalizedLandmark['eyeLeftInner']['x'] - normalizedLandmark['pupilLeft']['x'] <= glanceTH :
 		labels.add('leftEyeRight')
-	if normalizedLandmark['pupilRight']['x'] - normalizedLandmark['eyeLeftInner']['x'] <= glareTH :
+	if normalizedLandmark['pupilRight']['x'] - normalizedLandmark['eyeLeftInner']['x'] <= glanceTH :
 		labels.add('rightEyeLeft')
-	elif normalizedLandmark['eyeRightOuter']['x'] - normalizedLandmark['pupilRight']['x'] <= glareTH :
+	elif normalizedLandmark['eyeRightOuter']['x'] - normalizedLandmark['pupilRight']['x'] <= glanceTH :
 		labels.add('rightEyeRight')
 	return labels
 
+def testFace(faceData):
+  normLandmark = normalize(faceData)
+  labels = labelFace(normLandmark)
+  mapping = [
+    {
+      "key": "Glance",
+      "feature": [Set(["leftEyeLeft", "rightEyeLeft"]), Set(["leftEyeRight", "rightEyeRight"])]
+    },
+    {
+      "key": "ShySmile", 
+      "feature": [Set(["leftEyeClose", "rightEyeClose", "smile"])]
+    },
+    {
+      "key": "LOL", 
+      "feature": [Set(["leftEyeClose", "rightEyeClose", "laugh"])]
+    },
+    {
+      "key": "CloseEye", 
+      "feature": [Set(["leftEyeClose", "rightEyeClose"])]
+    },
+    {
+      "key": "Happy", 
+      "feature": [Set(["laugh"])]
+    },
+    {
+      "key": "Smile", 
+      "feature": [Set(["smile"])]
+    },
+    {
+      "key": "Suprise", 
+      "feature": [Set(["mouthOpen"])]
+    },
+    {
+      "key": "CloseOneEye", 
+      "feature": [Set(["leftEyeClose"]), Set(["rightEyeClose"])]
+    }
+  ]
+  for emoji in mapping:
+    for feature in emoji["feature"]:
+      if labels.issuperset(feature):
+        return emoji["key"];
+  return "Normal"
+
 def main():
-	plot(normalize(glare));
+  # plot(normalize(glance))
+  print testFace(suprisedLu)
 
 if __name__ == "__main__":
 	main()
