@@ -14,134 +14,134 @@ laugh = {"faceId":"80ba9ca0-5f44-4a60-ba0b-57b60dcf283f","faceRectangle":{"top":
 glance = {"faceId":"02cd24c0-9a06-458a-9058-31220910e0a6","faceRectangle":{"top":105,"left":154,"width":113,"height":113},"faceLandmarks":{"pupilLeft":{"x":188.2,"y":135.3},"pupilRight":{"x":234.5,"y":134.7},"noseTip":{"x":209.0,"y":159.4},"mouthLeft":{"x":187.8,"y":190.5},"mouthRight":{"x":227.6,"y":189.9},"eyebrowLeftOuter":{"x":164.8,"y":126.3},"eyebrowLeftInner":{"x":196.0,"y":119.9},"eyeLeftOuter":{"x":175.2,"y":135.3},"eyeLeftTop":{"x":182.7,"y":133.1},"eyeLeftBottom":{"x":182.8,"y":137.1},"eyeLeftInner":{"x":190.1,"y":135.1},"eyebrowRightInner":{"x":215.0,"y":119.8},"eyebrowRightOuter":{"x":241.7,"y":122.7},"eyeRightInner":{"x":222.5,"y":135.9},"eyeRightTop":{"x":229.7,"y":132.8},"eyeRightBottom":{"x":229.9,"y":137.4},"eyeRightOuter":{"x":237.1,"y":135.1},"noseRootLeft":{"x":199.8,"y":136.2},"noseRootRight":{"x":214.2,"y":136.7},"noseLeftAlarTop":{"x":195.2,"y":152.1},"noseRightAlarTop":{"x":218.7,"y":151.4},"noseLeftAlarOutTip":{"x":190.7,"y":163.4},"noseRightAlarOutTip":{"x":223.5,"y":162.4},"upperLipTop":{"x":209.4,"y":179.4},"upperLipBottom":{"x":209.7,"y":186.5},"underLipTop":{"x":209.1,"y":190.5},"underLipBottom":{"x":208.4,"y":199.6}},"attributes":{"headPose":{"pitch":0.0,"roll":-1.9,"yaw":5.2},"gender":"male","age":27}}
 eyeCenter = {"faceId":"760a7ecd-5d5a-4678-94bd-6e01fdf7f8c7","faceRectangle":{"top":85,"left":152,"width":139,"height":139},"faceLandmarks":{"pupilLeft":{"x":192.1,"y":121.7},"pupilRight":{"x":245.3,"y":120.5},"noseTip":{"x":221.2,"y":152.4},"mouthLeft":{"x":197.1,"y":190.6},"mouthRight":{"x":247.2,"y":190.2},"eyebrowLeftOuter":{"x":168.1,"y":100.6},"eyebrowLeftInner":{"x":206.9,"y":97.4},"eyeLeftOuter":{"x":183.3,"y":122.3},"eyeLeftTop":{"x":191.2,"y":120.3},"eyeLeftBottom":{"x":191.0,"y":125.2},"eyeLeftInner":{"x":198.8,"y":122.3},"eyebrowRightInner":{"x":228.9,"y":94.8},"eyebrowRightOuter":{"x":267.3,"y":97.7},"eyeRightInner":{"x":238.5,"y":122.1},"eyeRightTop":{"x":247.6,"y":118.4},"eyeRightBottom":{"x":248.0,"y":124.2},"eyeRightOuter":{"x":256.5,"y":120.8},"noseRootLeft":{"x":212.7,"y":122.0},"noseRootRight":{"x":228.0,"y":122.2},"noseLeftAlarTop":{"x":206.0,"y":143.1},"noseRightAlarTop":{"x":234.0,"y":143.7},"noseLeftAlarOutTip":{"x":199.7,"y":158.7},"noseRightAlarOutTip":{"x":239.4,"y":158.5},"upperLipTop":{"x":221.5,"y":176.7},"upperLipBottom":{"x":222.1,"y":186.4},"underLipTop":{"x":222.4,"y":189.7},"underLipBottom":{"x":222.3,"y":201.5}},"attributes":{"headPose":{"pitch":0.0,"roll":-2.0,"yaw":-3.3},"gender":"male","age":24}}
 sample = [
-  {
-    "faceId": "17e0bd16-e969-4ed1-95e4-08f40bf88c90",
-    "faceRectangle": {
-      "width": 59,
-      "height": 59,
-      "left": 276,
-      "top": 43
-    },
-    "faceLandmarks": {
-      "pupilLeft": {
-        "x": "294.9",
-        "y": "57.3"
-      },
-      "pupilRight": {
-        "x": "318.9",
-        "y": "60.2"
-      },
-      "noseTip": {
-        "x": "310.4",
-        "y": "74.3"
-      },
-      "mouthLeft": {
-        "x": "290.9",
-        "y": "86.0"
-      },
-      "mouthRight": {
-        "x": "312.4",
-        "y": "87.6"
-      },
-      "eyebrowLeftOuter": {
-        "x": "283.5",
-        "y": "49.2"
-      },
-      "eyebrowLeftInner": {
-        "x": "304.7",
-        "y": "51.9"
-      },
-      "eyeLeftOuter": {
-        "x": "289.1",
-        "y": "57.1"
-      },
-      "eyeLeftTop": {
-        "x": "294.5",
-        "y": "54.4"
-      },
-      "eyeLeftBottom": {
-        "x": "293.1",
-        "y": "61.3"
-      },
-      "eyeLeftInner": {
-        "x": "298.3",
-        "y": "59.5"
-      },
-      "eyebrowRightInner": {
-        "x": "314.6",
-        "y": "54.7"
-      },
-      "eyebrowRightOuter": {
-        "x": "326.8",
-        "y": "54.2"
-      },
-      "eyeRightInner": {
-        "x": "313.6",
-        "y": "61.3"
-      },
-      "eyeRightTop": {
-        "x": "318.6",
-        "y": "57.7"
-      },
-      "eyeRightBottom": {
-        "x": "318.8",
-        "y": "64.0"
-      },
-      "eyeRightOuter": {
-        "x": "323.0",
-        "y": "60.9"
-      },
-      "noseRootLeft": {
-        "x": "304.3",
-        "y": "60.6"
-      },
-      "noseRootRight": {
-        "x": "312.4",
-        "y": "61.4"
-      },
-      "noseLeftAlarTop": {
-        "x": "302.8",
-        "y": "70.0"
-      },
-      "noseRightAlarTop": {
-        "x": "312.6",
-        "y": "70.5"
-      },
-      "noseLeftAlarOutTip": {
-        "x": "299.0",
-        "y": "75.5"
-      },
-      "noseRightAlarOutTip": {
-        "x": "314.3",
-        "y": "77.0"
-      },
-      "upperLipTop": {
-        "x": "307.2",
-        "y": "83.8"
-      },
-      "upperLipBottom": {
-        "x": "306.5",
-        "y": "86.5"
-      },
-      "underLipTop": {
-        "x": "305.2",
-        "y": "88.2"
-      },
-      "underLipBottom": {
-        "x": "304.1",
-        "y": "93.0"
-      }
-    },
-    "attributes": {
-      "age": 26,
-      "gender": "female",
-      "headPose": {
-        "roll": "5.0",
-        "yaw": "25.0",
-        "pitch": "0.0"
-      }
-    }
-  }
+	{
+		"faceId": "17e0bd16-e969-4ed1-95e4-08f40bf88c90",
+		"faceRectangle": {
+			"width": 59,
+			"height": 59,
+			"left": 276,
+			"top": 43
+		},
+		"faceLandmarks": {
+			"pupilLeft": {
+				"x": "294.9",
+				"y": "57.3"
+			},
+			"pupilRight": {
+				"x": "318.9",
+				"y": "60.2"
+			},
+			"noseTip": {
+				"x": "310.4",
+				"y": "74.3"
+			},
+			"mouthLeft": {
+				"x": "290.9",
+				"y": "86.0"
+			},
+			"mouthRight": {
+				"x": "312.4",
+				"y": "87.6"
+			},
+			"eyebrowLeftOuter": {
+				"x": "283.5",
+				"y": "49.2"
+			},
+			"eyebrowLeftInner": {
+				"x": "304.7",
+				"y": "51.9"
+			},
+			"eyeLeftOuter": {
+				"x": "289.1",
+				"y": "57.1"
+			},
+			"eyeLeftTop": {
+				"x": "294.5",
+				"y": "54.4"
+			},
+			"eyeLeftBottom": {
+				"x": "293.1",
+				"y": "61.3"
+			},
+			"eyeLeftInner": {
+				"x": "298.3",
+				"y": "59.5"
+			},
+			"eyebrowRightInner": {
+				"x": "314.6",
+				"y": "54.7"
+			},
+			"eyebrowRightOuter": {
+				"x": "326.8",
+				"y": "54.2"
+			},
+			"eyeRightInner": {
+				"x": "313.6",
+				"y": "61.3"
+			},
+			"eyeRightTop": {
+				"x": "318.6",
+				"y": "57.7"
+			},
+			"eyeRightBottom": {
+				"x": "318.8",
+				"y": "64.0"
+			},
+			"eyeRightOuter": {
+				"x": "323.0",
+				"y": "60.9"
+			},
+			"noseRootLeft": {
+				"x": "304.3",
+				"y": "60.6"
+			},
+			"noseRootRight": {
+				"x": "312.4",
+				"y": "61.4"
+			},
+			"noseLeftAlarTop": {
+				"x": "302.8",
+				"y": "70.0"
+			},
+			"noseRightAlarTop": {
+				"x": "312.6",
+				"y": "70.5"
+			},
+			"noseLeftAlarOutTip": {
+				"x": "299.0",
+				"y": "75.5"
+			},
+			"noseRightAlarOutTip": {
+				"x": "314.3",
+				"y": "77.0"
+			},
+			"upperLipTop": {
+				"x": "307.2",
+				"y": "83.8"
+			},
+			"upperLipBottom": {
+				"x": "306.5",
+				"y": "86.5"
+			},
+			"underLipTop": {
+				"x": "305.2",
+				"y": "88.2"
+			},
+			"underLipBottom": {
+				"x": "304.1",
+				"y": "93.0"
+			}
+		},
+		"attributes": {
+			"age": 26,
+			"gender": "female",
+			"headPose": {
+				"roll": "5.0",
+				"yaw": "25.0",
+				"pitch": "0.0"
+			}
+		}
+	}
 ]
 def normalize(facialData):
 	normalizedLandmark = {}
@@ -192,12 +192,12 @@ def findCosABC(A, B, C):
 
 def labelFace(normalizedLandmark):
 	labels = Set([])
-	glanceTH = 0.03
-	closeEyeTH = 0.02
+	glanceTH = 0.035
+	closeEyeTH = 0.025
 	smileTH = -0.9
 	laughTH = -0.75
 	openMouthTH = 0.1
-  sadTH = -0.95
+	sadTH = -1
 	if normalizedLandmark["underLipTop"]["y"] - normalizedLandmark["upperLipBottom"]["y"] >= openMouthTH :
 		labels.add('mouthOpen')
 	if normalizedLandmark["eyeLeftBottom"]["y"] - normalizedLandmark["eyeLeftTop"]["y"] <= closeEyeTH :
@@ -205,8 +205,8 @@ def labelFace(normalizedLandmark):
 	if normalizedLandmark["eyeRightBottom"]["y"] - normalizedLandmark["eyeRightTop"]["y"] <= closeEyeTH :
 		labels.add('rightEyeClose')
 	mouthAngle = findCosABC(normalizedLandmark["mouthLeft"], normalizedLandmark["underLipTop"], normalizedLandmark["mouthRight"])
-  if normalizedLandmark["underLipTop"]["y"] < (normalizedLandmark["mouthLeft"]["y"]+normalizedLandmark["mouthRight"]["y"])/2 and mouthAngle >= sadTH:
-    labels.add('sad')
+	if normalizedLandmark["underLipTop"]["y"] < (normalizedLandmark["mouthLeft"]["y"]+normalizedLandmark["mouthRight"]["y"])/2 and mouthAngle >= sadTH:
+		labels.add('sad')
 	elif mouthAngle >= laughTH :
 		labels.add('laugh')
 	elif mouthAngle >= smileTH:
@@ -222,56 +222,57 @@ def labelFace(normalizedLandmark):
 	return labels
 
 def testFace(faceData):
-  normLandmark = normalize(faceData)
-  labels = labelFace(normLandmark)
-  mapping = [
-    {
-      "key": "Glance",
-      "feature": [Set(["leftEyeLeft", "rightEyeLeft"]), Set(["leftEyeRight", "rightEyeRight"])]
-    },
-    {
-      "key": "ShySmile", 
-      "feature": [Set(["leftEyeClose", "rightEyeClose", "smile"])]
-    },
-    {
-      "key": "LOL", 
-      "feature": [Set(["leftEyeClose", "rightEyeClose", "laugh"])]
-    },
-    {
-      "key": "CloseEye", 
-      "feature": [Set(["leftEyeClose", "rightEyeClose"])]
-    },
-    {
-      "key": "Suprise", 
-      "feature": [Set(["mouthOpen"])]
-    },
-    {
-      "key": "Sad", 
-      "feature": [Set(["sad"])]
-    },
-    {
-      "key": "Happy", 
-      "feature": [Set(["laugh"])]
-    },
-    {
-      "key": "Smile", 
-      "feature": [Set(["smile"])]
-    },
-    {
-      "key": "CloseOneEye", 
-      "feature": [Set(["leftEyeClose"]), Set(["rightEyeClose"])]
-    }
-  ]
-  for emoji in mapping:
-    for feature in emoji["feature"]:
-      if labels.issuperset(feature):
-        return emoji["key"];
-  return "Normal"
+	normLandmark = normalize(faceData)
+	labels = labelFace(normLandmark)
+	mapping = [
+		{
+			"key": "Glance",
+			"feature": [Set(["leftEyeLeft"]), Set(["rightEyeLeft"]), Set(["leftEyeRight"]), Set(["rightEyeRight"])]
+		},
+		{
+			"key": "ShySmile", 
+			"feature": [Set(["leftEyeClose", "rightEyeClose", "smile"])]
+		},
+		{
+			"key": "LOL", 
+			"feature": [Set(["leftEyeClose", "rightEyeClose", "laugh"])]
+		},
+		{
+			"key": "CloseEye", 
+			"feature": [Set(["leftEyeClose", "rightEyeClose"])]
+		},
+		{
+			"key": "Suprise", 
+			"feature": [Set(["mouthOpen"])]
+		},
+		{
+			"key": "Sad", 
+			"feature": [Set(["sad"])]
+		},
+		{
+			"key": "Happy", 
+			"feature": [Set(["laugh"])]
+		},
+		{
+			"key": "Smile", 
+			"feature": [Set(["smile"])]
+		},
+		{
+			"key": "CloseOneEye", 
+			"feature": [Set(["leftEyeClose"]), Set(["rightEyeClose"])]
+		}
+	]
+	for emoji in mapping:
+		for feature in emoji["feature"]:
+			if labels.issuperset(feature):
+				print emoji["key"]
+				return emoji["key"]
+	return "Normal"
 
 def main():
-    return
-  #plot(normalize(glance))
-  #print testFace(suprisedLu)
+		return
+	#plot(normalize(glance))
+	#print testFace(suprisedLu)
 
 if __name__ == "__main__":
 	main()

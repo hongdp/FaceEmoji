@@ -37,6 +37,9 @@ emoji_list = [
     'male_old_asian',
     'Happy',
     'Smile',
+    'Sad',
+    'LOL',
+    'CloseEye'
 ]
 
 
