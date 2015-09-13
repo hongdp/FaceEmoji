@@ -75,5 +75,6 @@ def post_on_fb2():
 
 
 if __name__ == "__main__":
+    app.debug = True
     app.run()
 
