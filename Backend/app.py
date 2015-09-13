@@ -65,5 +65,6 @@ def microsoftFaceAPI(url_str):
 
 
 if __name__ == "__main__":
+    app.debug = True
     app.run()
 
