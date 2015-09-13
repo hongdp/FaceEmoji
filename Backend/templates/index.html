@@ -23,10 +23,12 @@
 
     <br/>
 
-    <div style="display: inline">
-        <video id="liveFace" width="320" height="240" autoplay></video>
-        <button id="snapButton" class="btn btn-small btn-primary">Snap Photo</button>
-        <button id="clearButton" class="btn btn-small btn-danger" type="button">Clear</button>
+    <div class="row">
+      <div class="col-xs-6"><video id="liveFace" width="320" height="240" autoplay></video></div>
+      <div class="col-xs-6">
+          <button id="snapButton" class="btn btn-small btn-primary">Snap Photo</button>
+          <button id="clearButton" class="btn btn-small btn-danger" type="button">Clear</button>
+      </div>
     </div>
     <div id="emojiDashborad">
         <canvas id="snapCanvas" width="320" height="240" style="display: none"></canvas>

@@ -60,12 +60,18 @@ function initFaceAPIs() {
 
 function drawEmojisByFaces(faces) {
     console.log(faces);
+    var emojiCanvas = document.getElementById("emojiCanvas");
+    if (emojiCanvas) {
+        emojiCanvas.parentNode.removeChild(emojiCanvas);
+    }
     var emojiCanvas = document.createElement("canvas");
     emojiCanvas.id = "emojiCanvas";
     emojiCanvas.width = "320";
     emojiCanvas.height = "240";
     var ctx = emojiCanvas.getContext("2d");
     img = document.getElementById("smile");
+    var snapCanvas = document.getElementById("snapCanvas");
+    ctx.drawImage(snapCanvas, 0, 0, snapCanvas.width, snapCanvas.height);
     for (var i = 0; i < faces.length; i++) {
         var face = faces[i];
         var angle = face.attributes.headPose.roll;
