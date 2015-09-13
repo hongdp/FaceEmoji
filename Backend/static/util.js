@@ -15,15 +15,13 @@ function postPrepare(callback) {
     http.open("post", '/combine', true);
     http.onreadystatechange = function () {
         if (http.readyState == 4 && http.status == 200) {
-            var combineimage_url = http.response;
+            combineimage_url = http.response;
             var previewImage = document.getElementById("previewImage");
-            var confirmButton = document.getElementById("confirmButton");
-            confirmButton.addEventListener('click', function() {
-               myFacebookLogin(combineimage_url);
-            });
             previewImage.src = combineimage_url;
             callback();
         }
     };
     http.send(dataString);
 }
+
+var combineimage_url = null;
