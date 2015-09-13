@@ -38,7 +38,6 @@ window.addEventListener("DOMContentLoaded", function () {
     document.getElementById("clearButton").addEventListener("click", function () {
         canvas.style.display = "none";
         var emojiCanvas = document.getElementById("emojiCanvas");
-        console.log(emojiCanvas);
         emojiCanvas.parentNode.removeChild(emojiCanvas);
         document.getElementById("postButton").style.display = "none";
     });
@@ -65,7 +64,6 @@ window.addEventListener("DOMContentLoaded", function () {
 }, false);
 
 function drawEmojisByFaces(data) {
-    console.log(data);
     var emojiCanvas = document.getElementById("emojiCanvas");
     if (emojiCanvas) {
         emojiCanvas.parentNode.removeChild(emojiCanvas);
@@ -88,7 +86,6 @@ function drawEmojisByFaces(data) {
             height = face.height;
         ctx.rotate(angle * Math.PI / 180);
         var img = document.getElementById('../static/'+emoji_name+'.png');
-        console.log(img);
         ctx.drawImage(img, left, top, width, height);
     }
     emojiCanvas.style.display = "inline";

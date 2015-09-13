@@ -39,7 +39,9 @@ emoji_list = [
     'Smile',
     'Sad',
     'LOL',
-    'CloseEye'
+    'CloseEye',
+    'Glance',
+    'ShySmile',
 ]
 
 
@@ -52,7 +54,6 @@ def generateImageUrl(request):
     blob_name = hashlib.sha224(st).hexdigest() + 'image.png'
     blob_service.put_block_blob_from_bytes('image', blob_name, content)
     img_url = blob_service.make_blob_url('image', blob_name)
-    print img_url
     return img_url
 
 
@@ -74,12 +75,6 @@ def handleBlob():
 @app.route("/combine", methods=['POST'])
 def handleCombine():
     return generateImageUrl(request)
-
-
-@app.route("/post")
-def post_on_fb():
-    return render_template('post_on_fb.html')
-
 
 def microsoftFaceAPI(url_str):
     headers = {
@@ -110,7 +105,6 @@ def facePlusAPI(img_url):
     API_SECRET = '4Y9YXOMSDvqu1Ompn9NSpNwWQFHs1hYD'
     api = API(API_KEY, API_SECRET)
     result = api.detection.detect(url=img_url)
-    print result
     return result
 
 
@@ -165,8 +159,6 @@ def decideEmoji(fp_data, ms_data):
     "face_data": face_data,
     "emoji_list": emoji_list
     }
-    print emoji_list
-    print face_data
     return ret
 
 

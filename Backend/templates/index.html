@@ -3,14 +3,12 @@
 
 <head>
     <title>Python Flask Bucket List App</title>
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-theme.min.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='util.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='facepp-sdk.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='post_on_fb.js') }}"></script>
@@ -21,8 +19,8 @@
 <script type="text/javascript" src="{{ url_for('static', filename='init.js') }}"></script>
 <div class="container">
     <div class="jumbotron">
-        <h3>Selfie Emoji @ MHacks VI</h3>
-        <p>Take a snape, share your selfie emoji!</p>
+        <h3>SelfiEmoji @ MHacks VI</h3>
+        <p>Take a snap, share your selfie emoji!</p>
     </div>
     <br/>
 
@@ -74,7 +72,10 @@
 
     <canvas id="combineCanvas" width="480" height="180" style="display: none"></canvas>
     <footer class="footer">
-        <p>&copy; MHacks 6</p>
+        <hr/>
+        <p>Microsoft Azure Blob Storage + Project Oxford API</p>
+        <p>Face++ API</p>
+        <p>Facebook API</p>
     </footer>
 </div>
 </body>

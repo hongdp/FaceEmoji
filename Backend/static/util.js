@@ -1,7 +1,6 @@
 function postPrepare(callback) {
     var can1 = document.getElementById('snapCanvas');
     var can2 = document.getElementById('emojiCanvas');
-    console.log(can2);
     var canvas = document.getElementById('combineCanvas');
     var context = canvas.getContext('2d');
 

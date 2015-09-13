@@ -1,12 +1,11 @@
 window.fbAsyncInit = function () {
     FB.init({
-        appId: '905131999579491',
+        appId: '905262636233094',
         xfbml: true,
         version: 'v2.4'
     });
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
-            console.log('Logged in.');
         }
         else {
             FB.login();
@@ -65,6 +64,7 @@ function voiceControl() {
         document.getElementById('button-stop-ws').setAttribute('disabled', 'disabled');
     }
     else {
+        console.log("speech recognition");
         var recognizer = new window.SpeechRecognition();
         recognizer.continuous = false;
         recognizer.onresult = function (event) {
@@ -77,6 +77,7 @@ function voiceControl() {
                         || event.results[i][4].transcript == 'post'
                     ) {
                         myFacebookLogin();
+                        $("#myModal").modal('hide');
                     }
                 }
             }
