@@ -9,6 +9,8 @@
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <script type="text/javascript" src="{{ url_for('static', filename='util.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='facepp-sdk.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='post_on_fb.js') }}"></script>
@@ -18,12 +20,13 @@
 <script type="text/javascript" src="{{ url_for('static', filename='FaceAPI.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='init.js') }}"></script>
 <div class="container">
-    <video id="liveFace" width="320" height="240" autoplay></video>
+
     <br/>
 
-    <div>
-        <button id="snapButton">Snap Photo</button>
-        <button id="clearButton">Clear</button>
+    <div style="display: inline">
+        <video id="liveFace" width="320" height="240" autoplay></video>
+        <button id="snapButton" class="btn btn-small btn-primary">Snap Photo</button>
+        <button id="clearButton" class="btn btn-small btn-danger" type="button">Clear</button>
     </div>
     <div id="emojiDashborad">
         <canvas id="snapCanvas" width="320" height="240" style="display: none"></canvas>
