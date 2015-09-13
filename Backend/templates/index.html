@@ -23,10 +23,12 @@
 
     <br/>
 
-    <div style="display: inline">
-        <video id="liveFace" width="320" height="240" autoplay></video>
-        <button id="snapButton" class="btn btn-small btn-primary">Snap Photo</button>
-        <button id="clearButton" class="btn btn-small btn-danger" type="button">Clear</button>
+    <div class="row">
+      <div class="col-xs-6"><video id="liveFace" width="320" height="240" autoplay></video></div>
+      <div class="col-xs-6">
+          <button id="snapButton" class="btn btn-small btn-primary">Snap Photo</button>
+          <button id="clearButton" class="btn btn-small btn-danger" type="button">Clear</button>
+      </div>
     </div>
     <div id="emojiDashborad">
         <canvas id="snapCanvas" width="320" height="240" style="display: none"></canvas>
@@ -61,8 +63,10 @@
         </div>
     </div>
     <!-- hack way of doing this, load bunch -->
+    {% for e in emoji_path_list %}
+        <img id="{{e}}" src="{{e}}" class="sourceEmoji"/>
+    {% endfor %}
 
-    <img src="../static/smileEmoji.png" id="smile" class="emoji"/>
     <canvas id="combineCanvas" width="480" height="180" style="display: none"></canvas>
     <footer class="footer">
         <p>&copy; MHacks 6</p>

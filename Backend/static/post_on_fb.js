@@ -32,7 +32,7 @@ function myFacebookLogin(previewImageURL) {
                 "/me/photos",
                 "POST",
                 {
-                    message: "My Emoji!!",
+                    message: "Our Selfie Emoji!",
                     url: previewImageURL
                 },
                 function (response) {
