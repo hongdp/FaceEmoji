@@ -33,7 +33,7 @@ function myFacebookLogin() {
                 "POST",
                 {
                     message: "My Emoji!!",
-                    url: "http://line25.com/wp-content/uploads/2010/facebook/1.png"
+                    url: combineimage
                 },
                 function (response) {
                     if (!response && response.error) {
@@ -90,6 +90,7 @@ function combine() {
     var img2 = document.getElementById('img2');
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
+    var combineimage = document.getElementById('CombImg');
 
     canvas.width = 200;
     canvas.height = 100;
@@ -97,6 +98,20 @@ function combine() {
     context.globalAlpha = 1.0;
     context.drawImage(img1, 0, 0, 100, 100);
     context.globalAlpha = 1.0; //Remove if pngs have alpha
-    context.drawImage(img2, 100, 0, 100, 100);
+    context.drawImage(img2,100, 0,100,100);
+
+    //ImageToUrl
+    canvas.style.display = "block";
+    var dataURL = canvas.toDataURL();
+    var dataString = dataURL.split(',')[1];
+    var http = new XMLHttpRequest();
+    var serviceEndpoint = "/combine";
+    http.open("post", serviceEndpoint, true);
+    http.onreadystatechange = function() {
+        if (http.readyState==4 && http.status==200) {
+            combineimage = http.response;
+            console.log(combineimage);
+        }
+    };
 }
 
