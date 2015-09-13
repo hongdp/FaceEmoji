@@ -25,7 +25,7 @@ window.fbAsyncInit = function () {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-function myFacebookLogin(previewImageURL) {
+function myFacebookLogin() {
     FB.login(
         function () {
             FB.api(
@@ -33,7 +33,7 @@ function myFacebookLogin(previewImageURL) {
                 "POST",
                 {
                     message: "Our Selfie Emoji!",
-                    url: previewImageURL
+                    url: combineimage_url
                 },
                 function (response) {
                     if (!response && response.error) {
@@ -46,9 +46,9 @@ function myFacebookLogin(previewImageURL) {
     );
 }
 
-function confirmPage(previewImageURL) {
+function confirmPage() {
     if (confirm("Sure to post your Emoji") == true) {
-        myFacebookLogin(previewImageURL);
+        myFacebookLogin();
     }
     else {
         alert("Error");//confirmPage();

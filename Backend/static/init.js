@@ -3,7 +3,6 @@
  */
 
 window.addEventListener("DOMContentLoaded", function () {
-    var faceAPIs = initFaceAPIs();
     var liveFace = document.getElementById("liveFace"),
         liveFaceObj = {"video": true},
         canvas = document.getElementById("snapCanvas"),
@@ -20,7 +19,7 @@ window.addEventListener("DOMContentLoaded", function () {
         emojiCanvas.height = "240";
         var ctx = emojiCanvas.getContext("2d");
         ctx.font = "48px serif";
-        ctx.fillText('Loading...', 25, 160);
+        ctx.fillText('Loading...', 60, 150);
         document.getElementById("emojiDashborad").insertBefore(emojiCanvas, postButton);
         canvas.style.display = "inline";
         var dataURL = canvas.toDataURL();
@@ -64,11 +63,6 @@ window.addEventListener("DOMContentLoaded", function () {
         }, errBack);
     }
 }, false);
-
-function initFaceAPIs() {
-    var faceAPIs = FaceAPIs();
-    return faceAPIs;
-}
 
 function drawEmojisByFaces(data) {
     console.log(data);
