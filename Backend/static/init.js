@@ -10,8 +10,9 @@ window.addEventListener("DOMContentLoaded", function () {
         context = canvas.getContext("2d");
     document.getElementById("snapButton").addEventListener("click", function () {
         context.drawImage(liveFace, 0, 0, 320, 240);
-        canvas.style.display = "block";
+        canvas.style.display = "inline";
         var dataURL = canvas.toDataURL();
+<<<<<<< HEAD
         var blobBin = atob(dataURL.split(',')[1]);
         var array = [];
         for (var i = 0; i < blobBin.length; i++) {
@@ -45,6 +46,19 @@ window.addEventListener("DOMContentLoaded", function () {
 	        };
 	        http.send(temp);
         });
+=======
+        var dataString = dataURL.split(',')[1];
+        var http = new XMLHttpRequest();
+        var serviceEndpoint = "/blob";
+        http.open("post", serviceEndpoint, true);
+        http.onreadystatechange = function() {
+            if (http.readyState==4 && http.status==200) {
+                faces = JSON.parse(http.response);
+                drawEmojisByFaces(faces);
+            }
+        };
+        http.send(dataString);
+>>>>>>> 813bb4a384d15b0d7be7bae76aa626f7addc7a94
     });
     document.getElementById("clearButton").addEventListener("click", function () {
         canvas.style.display = "none";
@@ -74,4 +88,24 @@ window.addEventListener("DOMContentLoaded", function () {
 function initFaceAPIs() {
     var faceAPIs = FaceAPIs();
     return faceAPIs;
+}
+
+function drawEmojisByFaces(faces) {
+    console.log(faces);
+    var emojiCanvas = document.getElementById("emojiCanvas");
+    console.log(emojiCanvas);
+    var ctx = emojiCanvas.getContext("2d");
+    img = document.getElementById("smile");
+    for (var i = 0; i < faces.length; i++) {
+        var face = faces[i];
+        var angle = face.attributes.headPose.roll;
+        var top = face.faceRectangle.top;
+        var left = face.faceRectangle.left;
+        var width = face.faceRectangle.width;
+        var height = face.faceRectangle.height;
+        ctx.rotate(angle * Math.PI / 180);
+        ctx.drawImage(img, left, top, width, height);
+    }
+    emojiCanvas.style.display = "inline";
+    document.getElementById("postButton").style.display = "block";
 }
